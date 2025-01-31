@@ -1,45 +1,29 @@
 import React from "react";
 
-const MovieCard = ({ title, description, poster }) => {
+const MovieCard = ({ rank, title, poster }) => {
   return (
-    <div className="max-w-xs bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition hover:scale-105 hover:shadow-xl">
+    <div className="relative cursor-pointer w-48 md:w-56 lg:w-64 flex-shrink-0 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+      {/* Rank Number - Always Visible & Overlapping the Card */}
+      <span className="absolute bottom-20 left-0 transform translate-x-[-30%] translate-y-[30%] z-20 
+                       text-9xl font-extrabold text-black rank-outline drop-shadow-lg">
+        {rank}
+      </span>
+
       {/* Movie Poster */}
-      <div className="h-60">
+      <div className="relative">
         <img
           src={poster}
-          alt={`${title} Poster`}
-          className="h-full w-full object-cover"
+          alt={title}
+          className="rounded-lg w-full h-90 object-cover transition-opacity duration-300 hover:opacity-75"
         />
+        {/* Gradient Overlay on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
       </div>
 
-      {/* Movie Details */}
-      <div className="p-4">
-        <h3 className="text-lg font-bold text-white truncate">{title}</h3>
-        <p className="mt-2 text-sm text-gray-400 line-clamp-2">{description}</p>
-      </div>
-
-      {/* Action Buttons */}
-      <div className="flex justify-between items-center p-4">
-        <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
-          Watch Now
-        </button>
-        <button className="text-gray-400 hover:text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.75 6.75a6.5 6.5 0 11-9.5 0m9.5 0a6.5 6.5 0 11-9.5 0m4.75 13.5v-4.25a2.25 2.25 0 10-4.5 0V20.25"
-            />
-          </svg>
-        </button>
-      </div>
+      {/* Movie Title */}
+      <h2 className="text-white text-lg font-semibold mt-2 transition-colors duration-300 hover:text-red-400">
+        {title}
+      </h2>
     </div>
   );
 };
