@@ -8,8 +8,8 @@ const HeroSection = () => {
 
   return (
    
-   <div className='bg-[url(./assets/Background.jpg)]  h-full w-screen  '>
-        <div className="absolute inset-0 bg-gray-900 opacity-85  h-full w-screen"></div>
+   <div className='bg-[url(./assets/Background.jpg)]  h-screen w-screen  '>
+        <div className="absolute inset-0 bg-gray-900 opacity-85  h-screen w-screen"></div>
       <header className="absolute inset-x-0 top-0">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">

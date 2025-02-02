@@ -1,6 +1,6 @@
 import './App.css'
 import HeroSection from './components/HeroSection'
-import Trending from './components/Trending'
+import ReasonstoJoin from './components/ReasonstoJoin'
 import TrendingMovies from './components/TrendingMovies'
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
    <div className='container' >
     <HeroSection/>
     <TrendingMovies />
+    <ReasonstoJoin />
      
    </div>
   )
