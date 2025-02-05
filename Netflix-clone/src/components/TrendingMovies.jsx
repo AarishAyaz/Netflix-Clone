@@ -51,7 +51,7 @@ const TrendingMovies = () => {
         ></path>
       </svg> */}
 
-      <h1 className="text-3xl font-extrabold mb-6 ml-8 pt-10 relative">
+      <h1 className="text-4xl font-extrabold mb-6 ml pt-10 relative">
         Trending Now
       </h1>
 

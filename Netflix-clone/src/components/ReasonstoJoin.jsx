@@ -36,7 +36,7 @@ const Reasons = [
 const ReasonstoJoin = () => {
     return (
         <div className='relative bg-black text-white pl-70 pr-70 space-x-8 w-screen pt-10'>
-            <h1 className='text-white text-2xl ml-8 font-bold mb-6'>More Reasons To Join</h1>
+            <h1 className='text-white text-4xl ml- font-bold mb-6'>More Reasons To Join</h1>
             <div className="flex flex-wrap gap-6 justify-center">
                 {Reasons.map((reason) => (
                     <ReasonsCard 

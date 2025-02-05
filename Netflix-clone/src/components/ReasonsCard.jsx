@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReasonsCard = ({ title, description, image }) => {
     return (
-        <div className="w-77 p-10 relative h-80 text-xl rounded-lg shadow-lg bg-gradient-to-b from-purple-950 to-indigo-950   dark:bg-black dark:bg-none flex flex-col justify-between">
+        <div className="w-79 p-10 relative h-80 text-xl rounded-lg shadow-lg bg-gradient-to-b from-purple-950 to-indigo-950   dark:bg-black dark:bg-none flex flex-col justify-between">
             <div className=''>
                 <h2 className="text-white font-bold">{title}</h2>
                 <p className="text-white pt-3">{description}</p>
