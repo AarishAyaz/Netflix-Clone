@@ -1,32 +1,47 @@
 import React, { useEffect, useState, useRef } from "react";
 import MovieCard from "./MovieCard";
+import axios from "axios";
 
 const TrendingMovies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const scrollRef = useRef(null); // Ref for scrolling
+  const scrollRef = useRef(null); 
 
-  // Fetch trending movies
+  // // Fetch trending movies
+  // useEffect(() => {
+  //   const fetchMovies = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://api.themoviedb.org/3/trending/movie/day?api_key=794cee3ccdc629933512fc84db90cd51"
+  //       );
+  //       if (!response.ok) throw new Error("Failed to fetch data");
+  //       const data = await response.json();
+  //       setMovies(data.results || []);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchMovies();
+  // }, []);
+
+  //Fetching movies using axios library
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch(
-          "https://api.themoviedb.org/3/trending/movie/day?api_key=794cee3ccdc629933512fc84db90cd51"
-        );
-        if (!response.ok) throw new Error("Failed to fetch data");
-        const data = await response.json();
-        setMovies(data.results || []);
-      } catch (error) {
+    const fetchMovies = async () =>{
+      try{
+        const response = await axios.get("https://api.themoviedb.org/3/trending/movie/day?api_key=794cee3ccdc629933512fc84db90cd51");
+        setMovies(response.data.results || []);
+      } catch(error){
         setError(error.message);
-      } finally {
+      }finally{
         setLoading(false);
       }
     };
     fetchMovies();
   }, []);
-
-  // Scroll functions
+ 
   const scrollLeft = () => {
     scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
   };
@@ -56,7 +71,6 @@ const TrendingMovies = () => {
       </h1>
 
       <div className="">
-        {/* Scroll Buttons */}
         <button
           className="cursor-pointer absolute left-2 top-1/2 transform -translate-y-1/2 z-10 flex justify-center items-center h-30 w-2 text-center bg-gray-900 bg-opacity-75 text-white ml-68 hover:bg-gray-700 p-3 rounded-full"
           onClick={scrollLeft}
@@ -76,7 +90,6 @@ const TrendingMovies = () => {
               <MovieCard
                 key={movie.id}
                 rank={index + 1}
-               // title={movie.title || "Untitled"}
                 description={movie.overview || "No description available."}
                 poster={
                   movie.poster_path

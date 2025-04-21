@@ -4,7 +4,6 @@ const About = () => {
   return (
     <div className=" bg-black text-gray-300 p-10 w-screen ">
       <div className="max-w-5xl mx-auto">
-        {/* Main signup section */}
         <div className="text-center mb-12">
           <h1 className="text-white text-xl mb-4">
             Ready to watch? Enter your email to create or restart your membership.
@@ -34,14 +33,12 @@ const About = () => {
           </div>
         </div>
 
-        {/* Contact section */}
         <div className="text-center underline mb-12">
           <a href="#" className="hover:underline flex justify-items-start">
             Questions? Contact us.
           </a>
         </div>
 
-        {/* Footer links */}
         <div className="grid grid-cols-2 underline sm:grid-cols-4 gap-4 mb-8">
           <div className="space-y-4">
             <a href="#" className="block hover:underline">FAQ</a>
@@ -68,7 +65,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Language selector */}
         <div className="mb-4">
           <button className="px-4 py-1 border border-gray-600 rounded mt-5 bg-transparent hover:bg-gray-800/60 transition-colors inline-flex items-center">
             <svg 
@@ -101,7 +97,6 @@ const About = () => {
           </button>
         </div>
 
-        {/* Region text */}
         <div className="text-sm mt-8">
           Netflix Pakistan
         </div>

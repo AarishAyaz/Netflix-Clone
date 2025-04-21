@@ -5,7 +5,6 @@ import R4 from '../assets/Reason4.png';
 import React from 'react';
 import ReasonsCard from './ReasonsCard';
 
-// Define or import the Reasons array
 const Reasons = [
     {
         id: 1,
